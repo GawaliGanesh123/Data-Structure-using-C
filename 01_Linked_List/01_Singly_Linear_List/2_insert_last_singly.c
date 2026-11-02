@@ -8,8 +8,6 @@ struct node
 };
 
 
-
-
 void InsertLast(struct node ** ppHead, int iNo)
 {
     struct node *pNewNode = NULL;
@@ -78,3 +76,6 @@ int main()
 
     return 0;
 }
+
+
+
