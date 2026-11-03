@@ -8,7 +8,6 @@ struct node
 };
 
 
-
 void Display(struct node *pHead)
 {
     if( NULL == pHead)
@@ -88,7 +87,6 @@ int main()
 
     Display(pFirst);
     
-
     iDelData = DeleteFirst(&pFirst);
 
     printf("\nAfter Deletion\n");
