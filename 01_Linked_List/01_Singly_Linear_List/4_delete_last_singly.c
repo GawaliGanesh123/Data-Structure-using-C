@@ -13,7 +13,7 @@ void Display(struct node *pHead)
     if( NULL == pHead)
     {
         printf("Linked List is empty !!\n");
-        return;
+        return; 
     }
 
     printf("Data from the linked list : \n");
