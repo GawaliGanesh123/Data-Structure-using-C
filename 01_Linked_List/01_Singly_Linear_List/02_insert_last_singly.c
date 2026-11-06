@@ -5,7 +5,7 @@ struct node
 {
     int iData; 
     struct node *pNext;
-};
+}; 
 
 
 void InsertLast(struct node ** ppHead, int iNo)
