@@ -5,7 +5,7 @@ struct node
 {
 	int iData;
 	struct node *PNext;
-};
+}; 
 
 int main()
 {
