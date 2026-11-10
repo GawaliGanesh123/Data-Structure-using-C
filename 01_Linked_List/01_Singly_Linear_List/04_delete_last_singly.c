@@ -8,7 +8,7 @@ struct node
 };
 
 
-void Display(struct node *pHead)
+void Display(struct node *pHead) 
 { 
     if( NULL == pHead)
     {
