@@ -7,7 +7,7 @@ struct node
     struct node *pNext;
 };
 
-
+ 
 void InsertFirst(struct node ** ppHead, int iNo)
 {
     struct node * pNewNode = NULL;
