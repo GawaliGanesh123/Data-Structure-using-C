@@ -10,7 +10,7 @@ struct node
 
 void InsertFirst(struct node ** ppHead, int iNo)
 {
-    struct node * pNewNode = NULL;
+    struct node * pNewNode = NULL; 
     pNewNode = (struct node *)malloc(sizeof(struct node));
 
     if(NULL == pNewNode)
