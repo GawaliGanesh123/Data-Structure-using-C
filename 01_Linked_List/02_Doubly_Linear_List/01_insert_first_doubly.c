@@ -4,7 +4,7 @@
 struct node
 {
 	struct node *PPrev;
-	int iData;
+	int iData; 
 	struct node *PNext;
 };
 
