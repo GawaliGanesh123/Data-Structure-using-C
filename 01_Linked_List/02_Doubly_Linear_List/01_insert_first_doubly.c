@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<malloc.h>
 
-
 struct node
 {
 	struct node *PPrev;
@@ -22,7 +21,6 @@ int main()
 
 	Display(PFirst);
 }
-
 
 void InsertFirst(struct node **PPHead, int iNo)
 {
@@ -47,12 +45,10 @@ void InsertFirst(struct node **PPHead, int iNo)
 	   return;
 	}
 
-
 	PNewNode->PNext= *PPHead;
 	(*PPHead)->PPrev=PNewNode;
 	*PPHead=PNewNode;
 }
-
 
 void Display(struct node *PHead)
 {
