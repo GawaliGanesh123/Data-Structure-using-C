@@ -9,7 +9,6 @@ struct node
 };
 
 
-
 void Display(struct node *pHead)
 {
     if( NULL == pHead)
@@ -78,7 +77,6 @@ int DeleteFirst(struct node **ppHead)
         (*ppHead)->pPrev=NULL;
      }
 
-   
     return iDelData;
 }
 
@@ -108,3 +106,6 @@ int main()
 
     return 0;
 }
+
+
+
