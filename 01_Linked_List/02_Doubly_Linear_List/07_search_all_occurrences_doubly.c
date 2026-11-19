@@ -6,7 +6,7 @@ struct node
     struct node *pPrev;
     int iData;
     struct node *pNext;
-};
+}; 
 
 
 void InsertFirst(struct node **ppHead, int iNo)
