@@ -9,7 +9,6 @@ struct node
 };
 
 
-
 void InsertFirst(struct node **ppHead, int iNo)
 {
     struct node *pNewNode=NULL;
@@ -81,3 +80,4 @@ int main()
 
     return 0;
 }
+
