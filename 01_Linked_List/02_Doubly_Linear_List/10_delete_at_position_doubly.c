@@ -9,7 +9,6 @@ struct node
 };
 
 
-
 int CountNode(struct node *pHead)
 {
      int iCount=0;
@@ -215,3 +214,4 @@ int main()
 
     return 0;
 }
+
