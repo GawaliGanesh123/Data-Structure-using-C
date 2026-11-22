@@ -6,7 +6,7 @@ struct node
     struct node *pNext;
     int iData;
     struct node *pPrev;
-};
+}; 
 
 void Display(struct node *pHead)
 {
