@@ -5,7 +5,7 @@ struct node
 {
     struct node *pPrev;
     int iData;
-    struct node *pNext;   
+    struct node *pNext;    
 };
 
 int CountNodes(struct node *pHead)
