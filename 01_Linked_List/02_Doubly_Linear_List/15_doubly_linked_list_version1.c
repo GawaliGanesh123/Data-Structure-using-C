@@ -146,7 +146,6 @@ void InsertAtPosition(struct node **ppHead, int iNo, int iPos)
          pNewNode->pPrev=pTemp;
     }
     
-
 }
 
 int DeleteFirst(struct node **ppHead)
