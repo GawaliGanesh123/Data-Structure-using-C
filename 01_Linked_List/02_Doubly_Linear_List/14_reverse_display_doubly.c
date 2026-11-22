@@ -9,7 +9,6 @@ struct node
 };
 
 
-
 void Display(struct node *pHead)
 {
     if( NULL == pHead)
@@ -79,7 +78,6 @@ void DisplayReverse(struct node *pHead)
 }
 
 
-
 void DeleteAll(struct node **ppHead)
 {
     struct node *pTemp= NULL;
@@ -118,3 +116,4 @@ int main()
 
     return 0;
 }
+
