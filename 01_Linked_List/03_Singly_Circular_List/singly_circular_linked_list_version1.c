@@ -6,7 +6,7 @@ struct node
     int iData;
     struct node *pNext;
 };
-
+ 
 int CountNodes(struct node *pHead, struct node *pTail)
 {  
     int iCount = 0;
