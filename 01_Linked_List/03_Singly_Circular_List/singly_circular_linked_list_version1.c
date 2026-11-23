@@ -8,7 +8,7 @@ struct node
 };
 
 int CountNodes(struct node *pHead, struct node *pTail)
-{
+{  
     int iCount = 0;
 
     if(pHead == NULL)
