@@ -5,7 +5,7 @@
 int g_iTop=-1;
 
 void Push(int *pStack, int iNo)
-{
+{ 
 	if(IsFull())
 	{
 	  printf("Stack Overflow");
