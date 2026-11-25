@@ -36,7 +36,7 @@ int IsFull()
 
 int IsEmpty()
 {
-	if(g_iTop == 1)
+	if(g_iTop == -1)
 	    return 1;
 
 	    return 0;
