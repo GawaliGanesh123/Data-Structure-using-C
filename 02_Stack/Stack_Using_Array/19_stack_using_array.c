@@ -4,7 +4,6 @@
 
 int g_iTop=-1;
 
-
 void Push(int *pStack, int iNo)
 {
 	if(IsFull())
@@ -60,7 +59,6 @@ void Display(const int *pStack)
 	   
 }
 
-
 int main(void)
 {
 	int Stack[MAX]={0};
@@ -77,3 +75,5 @@ int main(void)
 
 	return 0;
 }
+
+
