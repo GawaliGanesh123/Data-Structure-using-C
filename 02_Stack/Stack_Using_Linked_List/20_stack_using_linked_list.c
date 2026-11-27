@@ -1,137 +1,142 @@
+
 #include<stdio.h>
 #include<malloc.h>
 
-# define MAX 5
+#define MAX 5
+
+typedef int BOOL;
+
+#define TRUE 1
+#define FALSE 0
 
 struct node
 {
-	int iData;
-	struct node *pNext;
+    int iData;
+    struct node *pNext;
 };
 
 int CountNodes(struct node *pHead)
 {
-	int iCount=0;
+    int iCount = 0;
 
-	while(pHead != NULL)
-	{
-	   iCount++;
-	   pHead= pHead->pNext;
-	}
+    while(pHead != NULL)
+    {
+        iCount++;
+        pHead = pHead->pNext;
+    }
 
-	return iCount;
+    return iCount;
 }
 
-int IsFull(struct node *pHead)
+BOOL IsEmpty(struct node *pHead)
 {
-	if(CountNodes(pHead)== MAX)
-	     return 1;
+    if(pHead == NULL)
+        return TRUE;
 
-	return 0;
+    return FALSE;
 }
 
-int IsEmpty(struct node *pHead)
+BOOL IsFull(struct node *pHead)
 {
-	if(NULL == pHead)
-	   return 1;
+    if(MAX == CountNodes(pHead))
+        return TRUE;
 
-	return 0;
+    return FALSE;
 }
 
 void Display(struct node *pHead)
 {
-	if(IsEmpty(pHead))
-	{
-		printf("\nStack is empty");
-		return;
-	}
+    if(IsEmpty(pHead))
+    {
+        printf("\nStack is Empty\n");
+        return;
+    }
 
-	while(pHead != NULL)
-	{
-		printf("|%d|->",pHead->iData);
-		pHead=pHead->pNext;
-	}
+    printf("\nData from the Stack : \n");
+
+    while(pHead != NULL)
+    {
+        printf("|%d|->",pHead->iData);
+        pHead = pHead->pNext;
+    }
+
+    printf("NULL\n");
 }
 
 void Push(struct node **ppHead, int iNo)
 {
-	struct node *pNewNode=NULL;
+    struct node *pNewNode = NULL;
 
-	if(IsFull(*ppHead))
-	{
-	   printf("Stack Overflow");
-	   return;
-	}
+    if(IsFull(*ppHead))
+    {
+        printf("\nStack Overflow\n");
+        return;
+    }
 
-	pNewNode=(struct node*)malloc(sizeof(struct node));
+    pNewNode = (struct node *)malloc(sizeof(struct node));
 
-	if(NULL == pNewNode)
-	{
-		printf("Memory Allocation Failed");
-		return;
-	}
+    if(pNewNode == NULL)
+    {
+        printf("\nMemory Allocation Failed\n");
+        return;
+    }
 
-	pNewNode->iData=iNo;
+    pNewNode->iData = iNo;
 
-	pNewNode->pNext=*ppHead;
-	*ppHead=pNewNode;
+    pNewNode->pNext = *ppHead;
+    *ppHead = pNewNode;
 }
 
 int Pop(struct node **ppHead)
 {
-	int iPoppedData;
-	struct node *pTemp=NULL;
+    int iDelData = 0;
+    struct node *pTemp = NULL;
 
-	if(IsEmpty(*ppHead))
-	{
-	  printf("Stack is empty");
-	  return -1;
-	}
+    if(IsEmpty(*ppHead))
+    {
+        printf("\nStack is Empty\n");
+        return -1;
+    }
 
-	iPoppedData = (*ppHead)->iData;
+    iDelData = (*ppHead)->iData;
 
-	pTemp=*ppHead;
+    pTemp = *ppHead;
+    *ppHead = (*ppHead)->pNext;
 
-	*ppHead=(*ppHead)->pNext;
-	pTemp->pNext = NULL;
-	free(pTemp);
-	pTemp = NULL; 
+    pTemp->pNext = NULL;
 
-	return iPoppedData;
+    free(pTemp);
+    pTemp = NULL;
+
+    return iDelData;
 }
 
-void DeleteAll(struct node **ppHead)
+int main(void)
 {
-	struct node *pTemp=NULL;
+    struct node *pStack = NULL;
+    int iRet = 0;
 
-	while(*ppHead != NULL)
-	{
-		pTemp = *ppHead;
-		*ppHead = pTemp->pNext;
-		pTemp->pNext=NULL;
-		free(pTemp);
-	}
+    Push(&pStack,10);
+    Push(&pStack,20);
+    Push(&pStack,30);
+    Push(&pStack,40);
+    Push(&pStack,50);
+
+    Push(&pStack,60);
+
+    Display(pStack);
+
+    iRet = Pop(&pStack);
+
+    if(iRet != -1)
+        printf("\nPopped Data is : %d\n",iRet);
+
+    Display(pStack);
+
+    printf("\nCount of Nodes is : %d\n",CountNodes(pStack));
+
+    return 0;
 }
 
-int main()
-{
-	struct node *pStack=NULL;
 
-	Push(&pStack,10);
-	Push(&pStack,20);
-	Push(&pStack,30);
 
-	Display(pStack);
-
-	printf("\nPopped Data is %d\t",Pop(&pStack));
-
-	Display(pStack);
-
-	if(pStack != NULL)
-	{
-	  DeleteAll(&pStack);
-	  pStack=NULL;
-	}
-
-	return 0;
-}
