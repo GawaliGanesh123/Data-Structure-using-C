@@ -3,7 +3,7 @@
 #include<malloc.h>
 
 #define MAX 5
-
+ 
 typedef int BOOL; 
 
 #define TRUE 1
